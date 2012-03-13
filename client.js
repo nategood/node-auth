@@ -12,6 +12,7 @@ var options = {
     path: '/',
     key: fs.readFileSync('ssl/client.key'),
     cert: fs.readFileSync('ssl/client.crt'),
+    passphrase: 'password', // doesn't seem to work...
     headers: {}
 };
 

@@ -23,8 +23,12 @@ https.createServer(options, function (req, res) {
     if (req.client.authorized) {
         res.writeHead(200, {"Content-Type":"application/json"});
         res.end('{"status":"approved"}');
+        // console.log(req.client);
+        console.log("Approved Client ", req.client.socket.remoteAddress);
     } else {
         res.writeHead(401, {"Content-Type":"application/json"});
         res.end('{"status":"denied"}');
+        // console.log(req.client);
+        console.log("Denied Client " , req.client.socket.remoteAddress);
     }
-}).listen(8008);
+}).listen(5678);
